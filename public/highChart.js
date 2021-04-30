@@ -21,26 +21,26 @@ async function showSkill() {
 
     if (this.readyState == 4 && this.status == 200) {
       jo = JSON.parse(this.responseText);
-      console.log("working")
-      console.log(jo.arrList[0].gitID);
-      console.log(jo.arrList[0].codeforcesID)
+      // console.log("working")
+      // console.log(jo.arrList[0].gitID);
+      // console.log(jo.arrList[0].codeforcesID)
       let res = await fetch(`https://api.github.com/users/${jo.arrList[0].gitID}`);
       let data = await res.json();
-      console.log("highCharts")
-      console.log(data)
+      // console.log("highCharts")
+      // console.log(data)
       a = data.following
       b = data.followers
       c = data.public_gists
       d = data.public_repos
-      console.log(a)
-      console.log(b)
-      console.log(c)
-      console.log(d)
-      console.log(jo.arrList[0].codeforcesID)
+      // console.log(a)
+      // console.log(b)
+      // console.log(c)
+      // console.log(d)
+      // console.log(jo.arrList[0].codeforcesID)
       let res_1 = await fetch(`https://codeforces.com/api/user.info?handles=${jo.arrList[0].codeforcesID}`);
       let data_1 = await res_1.json();
-      console.log("data=")
-      console.log(data_1.result[0].country)
+      // console.log("data=")
+      // console.log(data_1.result[0].country)
       third.innerHTML = `
           <div class=col>
             <div class="d" style="max-width: 100%">

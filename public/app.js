@@ -3,7 +3,7 @@ fetch('/login/welcome')
     return (res.json());
     })  
     .then((res2)=>{
-        console.log(res2);
+        // console.log(res2);
     let d=document.getElementById('wel')
     let n=`${res2.name}`;
     d.innerHTML+=n;
@@ -13,14 +13,14 @@ fetch('/login/welcome')
 //Coding Profile Search
 async function DataSearchCoding() {
     let titleOrName = document.getElementById('search').value;
-    console.log(titleOrName);
+    // console.log(titleOrName);
     document.getElementById('homePageContent').innerHTML =" ";
     titleOrName.trim();
     titleOrName.replace("/\s/g", '%20');
     let res = await fetch(`https://codeforces.com/api/user.info?handles=${titleOrName}`);
     const data1 = await res.json();
     const data=data1.result[0];
-    console.log(data);
+    // console.log(data);
     let header = `
     <div class="page-title wb">
         <div class="container">
@@ -111,14 +111,14 @@ async function DataSearchCoding() {
 
 async function DataSearchDev() {
     let titleOrName = document.getElementById('search').value;
-    console.log(titleOrName);
+    // console.log(titleOrName);
     document.getElementById('homePageContent').innerHTML = "";
     titleOrName.trim();
     titleOrName.replace("/\s/g", '%20');
     let res = await fetch(`https://api.github.com/users/${titleOrName}`);
     const data1 = await res.json();
     const data=data1;
-    console.log(data);
+    // console.log(data);
     let header = `
     <div class="page-title wb">
         <div class="container">
